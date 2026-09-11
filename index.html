@@ -8,6 +8,12 @@
 <link rel="preconnect" href="https://unpkg.com">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
 <link rel="stylesheet" href="style.css" />
+<style>
+.trip-overview{background:var(--paper);border:1px solid rgba(24,32,26,.08);border-radius:24px;overflow:hidden;box-shadow:0 7px 24px rgba(30,36,31,.05)}
+.trip-summary{padding:18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;align-items:flex-end}.trip-summary>div:first-child{min-width:0}.trip-summary span{font-size:10px;letter-spacing:.12em;color:var(--muted);font-weight:800}.trip-summary strong{display:block;font-family:Georgia,"Times New Roman",serif;font-size:23px;font-weight:500;line-height:1.15;margin:5px 0 7px;letter-spacing:-.025em}.trip-summary p{margin:0;color:var(--muted);font-size:11.5px;line-height:1.55}.trip-summary-meta{text-align:right;flex:none}.trip-summary-meta b{display:block;font-size:13px;color:var(--sea);margin-bottom:3px}.trip-summary-meta span{letter-spacing:0;font-size:9px}
+.overview-days{padding:4px 14px 8px}.overview-day{display:grid;grid-template-columns:48px 1fr auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(24,32,26,.09)}.overview-day:last-child{border-bottom:0}.od-date b{display:block;font-family:Georgia,serif;font-size:16px;font-weight:500}.od-date span{display:block;font-size:9.5px;color:var(--muted);margin-top:3px}.od-main{min-width:0}.od-main strong{display:block;font-size:13.5px;line-height:1.35;margin-bottom:3px}.od-main span{display:block;color:var(--muted);font-size:10.5px;line-height:1.45}.od-tag{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px}.flight-tag{background:#f2dfd8}.drive-tag{background:#dfeaed}.highlight-tag{background:#efe5c9}
+@media(max-width:430px){.trip-summary{align-items:flex-start}.trip-summary-meta{display:none}.trip-summary strong{font-size:21px}.overview-day{grid-template-columns:43px 1fr auto}.od-main strong{font-size:13px}.od-main span{font-size:10px}}
+</style>
 </head>
 <body>
 <div class="app">
