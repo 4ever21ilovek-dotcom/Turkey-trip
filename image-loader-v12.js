@@ -30,7 +30,7 @@
   function applyOfflineAssets(){
     try{
       var xhr=new XMLHttpRequest();
-      xhr.open('GET','turkey-travel-offline.html?v=16',false);
+      xhr.open('GET','turkey-travel-offline.html?v=19',false);
       xhr.send(null);
       if(xhr.status && xhr.status>=400)throw new Error('offline asset file '+xhr.status);
       var text=xhr.responseText||'';
@@ -53,28 +53,13 @@
     }
   }
 
-  function applyV15Overrides(){
-    try{
-      var xhr=new XMLHttpRequest();
-      xhr.open('GET','image-overrides-v15.js?v=16',false);
-      xhr.send(null);
-      if(xhr.status && xhr.status>=400)throw new Error('override file '+xhr.status);
-      (0,eval)(xhr.responseText||'');
-      window.__tripImageOverridesV15=true;
-    }catch(err){
-      console.warn('Image overrides could not be loaded',err);
-    }
-  }
-
   function setupBudgetCollapse(){
     var card=document.querySelector('#budget .budget-card');
     var total=card&&card.querySelector('.budget-total');
     if(!card||!total||card.querySelector('.budget-toggle'))return;
-
     var style=document.createElement('style');
     style.textContent='.budget-card.budget-collapsed #budgetRows,.budget-card.budget-collapsed .budget-note,.budget-card.budget-collapsed .budget-actions,.budget-card.budget-collapsed .budget-editor{display:none!important}.budget-toggle{width:100%;border:1px solid #d5d3ca;background:#f4f1e9;color:#27332d;border-radius:16px;padding:12px 14px;margin-top:10px;font-size:12px;font-weight:850;display:flex;align-items:center;justify-content:space-between;cursor:pointer}.budget-toggle span:last-child{font-size:17px;transition:.2s}.budget-card:not(.budget-collapsed) .budget-toggle span:last-child{transform:rotate(180deg)}';
     document.head.appendChild(style);
-
     var btn=document.createElement('button');
     btn.type='button';
     btn.className='budget-toggle';
@@ -88,6 +73,5 @@
   }
 
   applyOfflineAssets();
-  applyV15Overrides();
   setupBudgetCollapse();
 })();
