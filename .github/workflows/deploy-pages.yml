@@ -24,6 +24,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+      - name: Bust password script cache
+        run: sed -i 's/image-overrides-v15.js?v=15/image-overrides-v15.js?v=17/g' index.html
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
