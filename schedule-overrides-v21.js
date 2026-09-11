@@ -1,4 +1,4 @@
-// v21: corrected camel timing and move shooting to D7 morning
+// v22: D7 shooting moved to after 10:00, with the coastal route shifted accordingly
 (function(){
 if(typeof DAYS==='undefined') return;
 function day(id){return DAYS.find(function(d){return d.id===id;});}
@@ -29,10 +29,15 @@ if(d5){
 var d7=day('D7');
 if(d7){
   removeBy(d7,'射击体验');
-  d7.events.unshift(['07:30–08:30','射击体验','activity','shooting_booking','Shooting Range Antalya',['todo',null],'按你的要求放在 D7 早上、从 Antalya 出发 D400 之前。当前未收到射击订单截图，所以具体场馆与确认时间先不编造；后续有票券可直接替换。']);
-  var old=findOldTown(d7);
-  if(old) old[0]='08:40–09:30';
-  d7.summary='射击 · Antalya · D400 · Kaputaş · Kaş · Ölüdeniz';
+  d7.events=[
+    ['08:30–09:30','Antalya 老城晨逛','attraction','antalya','Kaleici Antalya',['free',null],'早上人少、光线好。'],
+    ['10:15–11:15','射击体验','activity','shooting_booking','Shooting Range Antalya',['todo',null],'按你的要求放在 10 点之后，并安排在离开 Antalya 跑 D400 之前。当前没有射击订单截图，具体场馆确认后再微调前后车程。'],
+    ['11:15–14:15','D400 → Kaputaş Beach','drive',null,null,null,'射击结束后再正式上 D400；沿海观景台随停，注意弯道。'],
+    ['14:15–15:30','Kaputaş Beach 游泳','activity','kaputas','Kaputas Beach',['free',null],'带泳衣；把海滩停留压到约 1 小时 15 分，避免后面太赶。'],
+    ['16:00–17:15','Kaş 小镇 + 午餐','attraction','kas','Kas Antalya',['free',null],'白屋、海港、小店；当天会是偏晚午餐。'],
+    ['17:15–19:15','Kaş → Fethiye / Ölüdeniz','drive',null,null,null,'沿海弯多，注意会车；天色转暗后降低车速。'],
+    ['19:30–21:30','Ölüdeniz 海边晚餐','activity','oludeniz','Oludeniz Fethiye',null,'抵达后直接吃晚餐休息；第二天上午再安排蓝湖游泳。']
+  ];
+  d7.summary='Antalya · 10:15 射击 · D400 · Kaputaş · Kaş · Ölüdeniz';
 }
-function findOldTown(d){return d.events.find(function(e){return e[1]&&e[1].indexOf('Antalya 老城晨逛')>-1;});}
 })();
