@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#111510" />
+<title>Turkey 2026 · 10-Day Road Trip</title>
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app">
+<header class="hero" id="overview">
+  <img id="heroImg" alt="Cappadocia balloons" />
+  <div class="hero-copy"><div class="eyebrow">Türkiye · Sep 26 — Oct 05, 2026</div><h1>Turkey<br>Road Trip</h1><p>伊斯坦布尔 → 卡帕多奇亚 → 地中海 D400 → 棉花堡 → 以弗所 → 伊兹密尔</p><div class="hero-stats"><div class="hero-stat"><b>10</b><span>Days</span></div><div class="hero-stat"><b>9</b><span>Nights</span></div><div class="hero-stat"><b>~1,620</b><span>KM</span></div><div class="hero-stat"><b>2</b><span>People</span></div></div></div>
+</header>
+<section class="section"><div class="section-head"><div><div class="kicker">01 · Overview</div><h2>Trip at a glance</h2></div></div><div class="overview-grid"><div class="metric"><div class="num">8</div><div class="label">Flight Segments</div></div><div class="metric"><div class="num">7</div><div class="label">Rental Days</div></div><div class="metric"><div class="num">6</div><div class="label">Hotel Stops</div></div><div class="metric"><div class="num">1</div><div class="label">Balloon Flight</div></div><div class="metric wide"><div><div class="label">Core Route</div><div class="route">Istanbul → Cappadocia → Antalya → Kaş → Fethiye → Pamukkale → Ephesus → Izmir</div></div><span class="pill">● LIVE PLAN</span></div></div></section>
+<section class="section" id="flights"><div class="section-head"><div><div class="kicker">02 · Flights</div><h2>Swipe your flights</h2></div><div class="small">左右滑动</div></div><div class="flights" id="flightDeck"></div><div class="small" style="padding:0 4px">分享版已隐藏 PNR / 票号等敏感信息；航班均按文件中的已出票信息展示。</div></section>
+<section class="section" id="map"><div class="section-head"><div><div class="kicker">03 · Journey Map</div><h2>Planes + road trip</h2></div></div><div class="map-card"><div class="segmented"><button class="on" data-mapmode="turkey">土耳其路线</button><button data-mapmode="full">完整航程</button></div><div id="journeyMap"></div><div class="map-legend"><span><i class="legend-line"></i>自驾</span><span><i class="legend-line flightl"></i>航班</span></div></div></section>
+<section class="section" id="days"><div class="section-head"><div><div class="kicker">04 · Daily Plan</div><h2>10-day itinerary</h2></div><div class="small">点击展开</div></div><div class="days" id="daysList"></div></section>
+<section class="section" id="car"><div class="section-head"><div><div class="kicker">05 · Car Rental</div><h2>Drive plan</h2></div></div><div class="car-card"><div class="car-hero">🚙</div><div class="car-grid"><div class="meta-card"><b>Pick-up</b>9/28 · ASR Kayseri Airport</div><div class="meta-card"><b>Drop-off</b>10/5 · ADB Izmir Airport</div><div class="meta-card"><b>Rental</b>7 days · one-way</div><div class="meta-card"><b>Car / Fee</b>Citroën C3 · €579</div></div><div class="actions" style="margin-top:12px"><a class="btn dark" href="https://www.google.com/maps/search/?api=1&query=Kayseri+Airport+ASR" target="_blank">取车点地图</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Izmir+Adnan+Menderes+Airport" target="_blank">还车点地图</a></div><div class="checklist"><div class="check"><i>✓</i><span>取车时绕车拍一圈视频，记录原有划痕与油量。</span></div><div class="check"><i>✓</i><span>确认 HGS 高速电子标签、保险范围、胎压。</span></div><div class="check"><i>✓</i><span>D6 约 500 km，是全程最累驾驶日；每约 2 小时休息。</span></div><div class="check"><i>✓</i><span>ADB 还车前加满油并保留小票；共同验车再离开。</span></div></div></div></section>
+<section class="section" id="budget"><div class="section-head"><div><div class="kicker">06 · Budget</div><h2>Trip budget</h2></div></div><div class="budget-card"><div class="budget-total"><span>ESTIMATED · 2 PEOPLE</span><strong>¥37,046</strong><span>≈ ¥18,523 / person</span></div><div id="budgetRows"></div><div class="budget-note">预算沿用源文件的人均估算：国际往返机票 ¥5,969、土耳其内飞 ¥900、租车 ¥2,259、油费+高速 ¥875、住宿 ¥3,000、餐饮 ¥1,950、景点门票 ¥1,170、热气球 ¥1,400、娱乐 ¥1,000。酒店选择页的实际酒店合计为约 ¥6,028，和预算表里的 ¥6,000 接近。</div></div></section>
+<div class="source-note">数据说明：核心行程、航班、酒店、租车与预算来自你上传的《土耳其10天自驾完整行程（9.26–10.5）》；你后续明确纠正 D3 为 SAW → ASR，因此网页统一按 ASR 展示。景点购票按钮优先放土耳其文化部 / National Palaces 等官方或官方信息页；餐厅为 2026-09 的公开地图检索推荐，出发前建议再看当天营业状态。餐厅照片为菜品氛围参考图，不代表餐厅实拍。</div>
+<nav class="bottom-nav"><a href="#overview"><b>◎</b>总览</a><a href="#flights"><b>✈</b>航班</a><a href="#map"><b>⌖</b>地图</a><a href="#days"><b>≡</b>每日</a><a href="#car"><b>⌁</b>租车</a><a href="#budget"><b>¥</b>预算</a></nav>
+<div class="toast" id="toast">状态已保存</div>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body></html>
